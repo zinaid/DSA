@@ -249,8 +249,7 @@ Korak 5: End
 
 Implementacija istog u C++ bi bila:
 
-```
-
+```c++
 int findSum() {
     int suma = 0;
     for (int i = 1; 100000000000; i++){
@@ -258,7 +257,6 @@ int findSum() {
     }
     return suma;
 }
-
 ```
 
 E sad ako pokrenemo ovaj kod njeno izvršavanje će trajati jako dugo. Dva najvažnija resursa kompjuterskog programa su vrijeme i memorija:
@@ -281,7 +279,7 @@ Formula za računanje sume prvih N prirodnih brojeva je:
 
 Odnosno u kodu bi to bilo:
 
-```
+```c++
 int findSum(N) {
     return N * (N + 1) / 2;
 }
@@ -370,6 +368,8 @@ void printFirstElementOfArray(int arr[])
 }
 ```
 
+Ova funkcija se izvršava u O(1) vremenu (konstantno vrijeme) relativno od inputa. Znači da je neovisna od ulaza.
+
 Primjer 2. O(n)
 
 ```c++
@@ -381,6 +381,51 @@ void printAllElementOfArray(int arr[], int size)
     }
 }
 ```
+Ova funkcija se izvršava u O(n) vremenu (linearno vrijeme) relativno od inputa. Dakle, ako je ulaz 10 izvršava se 10 puta, a ako je ulaz 100 izvršava se 100 puta.
+
+Primjer 3. O(log n)
+
+Primjer je binarna pretraga.
+
+```c++
+public int runBinarySearchIteratively(
+  int[] sortedArray, int key, int low, int high) {
+    int index = Integer.MAX_VALUE;
+    
+    while (low <= high) {
+        int mid = low  + ((high - low) / 2);
+        if (sortedArray[mid] < key) {
+            low = mid + 1;
+        } else if (sortedArray[mid] > key) {
+            high = mid - 1;
+        } else if (sortedArray[mid] == key) {
+            index = mid;
+            break;
+        }
+    }
+    return index;
+}
+```
+<div style="text-align:center;"><img src="images/binarnapretraga.png"></div> 
+
+Primjer 4. O(nlogn)
+
+```c++
+int logNtimes(int N) { 
+  for (int k=0; k<N; k*=2) {
+     x++; 
+  } 
+  return x; 
+} 
+ 
+int nLogNtimes(int N) {
+  int answer=0; 
+  for (int k=0; k<N; k++) {
+    answer+=logNtimes(N);
+  } 
+}
+```
+Primjer je Merge Sort.
 
 Primjer 3. O(n^2)
 ```c++
@@ -396,3 +441,79 @@ void printAllPossibleOrderedPairs(int arr[], int size)
 }
 ```
 
+Ova funkcija sadrži ugniježđenu petlju. Ako naš niz ima n članova, prva petlja se izvršava n puta i unutarnja petlja se izvršava n puta za svaku iteraciju vanjske petlje, dajući nam n^2 izvođenja printa. Tako da ova funkcija se izvršava u O(n*n) vremenu (kvadratno vrijeme). Primjer je Bubble Sort.
+
+Primjer 4. O(2^n)
+
+```c++
+int fibonacci(int num)
+{
+    if (num <= 1) return num;
+    return fibonacci(num - 2) + fibonacci(num - 1);
+}
+```
+
+Rekurzivno računanje Fibonačijevih brojeva je primjer O(2^n) vremenski složene funkcije. To znači da se rast izvršavanja ovog algoritma dupla sa svakim dodavanjem input podataka. Rast ove funkcije je eksponencijalan.
+
+Primjer 5. O(n!)
+
+Problem putujućeg trgovca.
+
+### Pravila računanja Big O
+
+Osnovna pravila su:
+1. Izbacivanje konstanti
+
+```c++
+void printAllItemsTwice(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+	
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+}
+```
+
+Ova funkcija je O(n)+O(n) = O(2n) što zaokružujemo na O(n)
+
+2. Uzimanje najvećeg stepena
+
+```c++
+void printAllNumbersThenAllPairSums(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            printf("%d\n", arr[i] + arr[j]);
+        }
+    }
+}
+```
+
+Ova funkcija je O(n)+O(n^2), odnosno O(n^2).
+
+3. Uvijek uzimamo najgori slučaj
+
+```c++
+bool arrayContainsElement(int arr[], int size, int element)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == element) return true;
+    }
+    return false;
+}
+```
+
+Ova funkcija se može izvršiti i kao O(1) ako je odmah u prvoj iteraciji pronađen element. Ali se uzima najgori slučaj, a to je O(n).
