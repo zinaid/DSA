@@ -363,7 +363,7 @@ Ako funkcija f(n) leži bilo gdje između c1g(n) i c2g(n) za svako n ≥ n0, ond
 
 Primjer 1. O(1)
 
-```
+```c++
 void printFirstElementOfArray(int arr[])
 {
     printf("First element of array = %d",arr[0]);
@@ -372,7 +372,7 @@ void printFirstElementOfArray(int arr[])
 
 Primjer 2. O(n)
 
-```
+```c++
 void printAllElementOfArray(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
@@ -383,7 +383,7 @@ void printAllElementOfArray(int arr[], int size)
 ```
 
 Primjer 3. O(n^2)
-```
+```c++
 void printAllPossibleOrderedPairs(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
@@ -394,5 +394,5 @@ void printAllPossibleOrderedPairs(int arr[], int size)
         }
      }
 }
-```js
+```
 
