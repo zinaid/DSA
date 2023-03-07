@@ -517,3 +517,51 @@ bool arrayContainsElement(int arr[], int size, int element)
 ```
 
 Ova funkcija se može izvršiti i kao O(1) ako je odmah u prvoj iteraciji pronađen element. Ali se uzima najgori slučaj, a to je O(n).
+
+## MASTER TEOREM
+
+Ovaj teorem je vrlo važan za analizu algoritama i nudi jednostavna rješenja složenosti, najčešće za rekurzivne algoritme, ali može i za druge oblike.
+
+$T(n) = aT(\frac{n}{b}) + f(n)$, 
+
+gdje su $a>=1$ i $b>1$ konstante, a $f(n)$ asimptotski pozitivna funkcija. n-predstavlja veličinu problema, a broj potproblema kod rekurzivnih poziva, n/b -  predstavlja veličinu svakog potproblema i f(n) predstavlja asimptotsku ocjenu složenosti problema bez rekurzivnih poziva, a uključuje složenosti podjele problema te spajanja rješenja potproblema.
+
+Postoje 3 slučaja:
+
+1. $O(n^d)$, ako je $d>log_ba$
+2. $O(n^dlogn)$, ako je $d=log_ba$
+3. $O(n^{log_ba})$, ako je $d<log_ba$
+
+Primjer:
+
+$T(n)=4T(n/2)+O(n)$
+
+$a=4, b=2, d=1$
+
+$log_24=2>1$ => $T(n)=O(n^{lob_ba})=O(n^2)$.
+
+### PODIJELI PA VLADAJ
+
+Podijeli pa vladaj algoritam je strategija za rješavanje velikih problema, razbijanjem istih u manje potprobleme i rješavanjem potproblema i kombiniranjem istih da bi se dobio željeni rezultat. Da bi koristili podijeli pa vladaj algoritam, koristimo rekurziju.
+
+Koraci za algoritam podijeli pa vladaj su:
+1. Podijeli - podijeli dobijeni problem u manje probleme koristeći rekurziju
+2. Ovladaj - riješi manje probleme rekurzivno. Ako je problem manji, riješi ga direktno.
+3. Kombiniraj - kombiniraj rješenja potproblema koji su dio rekurzivnog procesa da bi dobili konačno rješenje.
+
+Primjer na Merge Sortu.
+
+<div style="text-align:center;"><img src="images/podijelipavladaj1.png"></div>
+
+<div style="text-align:center;"><img src="images/podijelipavladaj2.png"></div>
+
+Koristeći Master problem možemo odrediti vremensku složenost:
+
+$T(n) = aT(\frac{n}{b}) + f(n)$
+
+U ovom slučaju $a=2$, $b=2$ i $f(n)=O(n)$ tj. $d=1$.
+
+Dakle, $log_22 = 1$ i to je oblik: $O(n^dlogn)$.
+
+
+

@@ -8,10 +8,11 @@
   * Uvod u algoritme
   * Strukture podataka i tipovi
   * Zašto učiti algoritme
-  * Asimptotska notacija
+  * Asimptotska notacija (Big O)
   * Master teorem
   * Podijeli i vladaj algoritam
 * STRUKTURE PODATAKA
+  * Niz
   * Stek
   * Red
   * Tipovi redova (Obični red, Kružni red, Prioritetni red, Dequeu)
@@ -48,7 +49,6 @@
   * Dinamičko programiranje
     * Floyd Warshal algoritam
   * Algoritmi sa vraćanjem unazad 
-
 
 ## Način ocjenjivanja:
 
