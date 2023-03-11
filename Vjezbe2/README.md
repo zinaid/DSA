@@ -4,6 +4,8 @@ Niz je kolekcija elemenata spremljenih u graničnu memorijsku lokaciju. Ideja je
 
 Niz je linearna struktura podataka koja sadržava isti tip podataka i sprema ih u granične (jedna za drugom) memorijske lokacije. Nizovi rade na indeks sistemu koji počinje od 0 do (n-1) gdje je n veličina niza.
 
+<img src="images/niz.png"/>
+
 Nizovi omogućuju da lakše održavamo podatke istog tipa i da ne trebamo praviti nove varijable za svakog novog člana niza.
 
 Tipovi niza su:
@@ -12,6 +14,8 @@ Tipovi niza su:
 2. VIŠEDIMENZIONALNI NIZ [2-d]
 
 Niz deklariramo tako što naglasimo tip podaka niza, njegovo ime i dimenzije.
+
+<img src="images/deklaracijaniza.png" />
 
 ```c++
 int niz[n];
@@ -132,7 +136,7 @@ Napraviti program koji računa sumu unešenog niza.
 
 Primjer 2.
 
-Napraviti program koji pronalazi najveći član niza i provjerava koliko se puta ponavlja.
+Napraviti program koji pronalazi najveći član niza.
 
 Primjer 3.
 
