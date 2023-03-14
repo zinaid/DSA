@@ -23,10 +23,10 @@ void checkFile(fstream &file, const string &filename)
     }
 }
 
-int readNumZaposlenikaFromFile(Zaposlenik *zaposlenici, int maxZaposlenika, fstream &file)
+int readNumZaposlenikaFromFile(Zaposlenik *zaposlenici, fstream &file)
 {
     int numZaposlenici = 0;
-    while (numZaposlenici < maxZaposlenika && file)
+    while (numZaposlenici < MAX_ZAPOSLENICI && file)
     {
         file >> zaposlenici[numZaposlenici].ime >> zaposlenici[numZaposlenici].prezime >> zaposlenici[numZaposlenici].odjel >> zaposlenici[numZaposlenici].plata;
         numZaposlenici++;
@@ -64,7 +64,7 @@ int main()
     Zaposlenik zaposlenici[MAX_ZAPOSLENICI];
     fstream file;
     checkFile(file, "zaposlenici.txt");
-    int numZaposlenici = readNumZaposlenikaFromFile(zaposlenici, MAX_ZAPOSLENICI, file);
+    int numZaposlenici = readNumZaposlenikaFromFile(zaposlenici, file);
     file.close();
     printZaposlenici(zaposlenici, numZaposlenici);
     saveZaposlenikWithBigPay(zaposlenici, numZaposlenici);
