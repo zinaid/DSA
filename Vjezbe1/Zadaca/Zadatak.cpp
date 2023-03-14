@@ -1,3 +1,15 @@
+/*
+Implementirati program koji provjerava iz datoteke zaposlenici.txt sve zaposlenike. (Datoteka u prilogu).
+Ustanovi koji zaposlenik ima platu vecu od 5000 i napravi novi fajl koji ima ime tog zaposlenika.
+Strukturu Zaposlenik {
+    string ime;
+    string prezime;
+    string odjel;
+    float plata;
+}
+
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
