@@ -77,7 +77,7 @@ U prethodnim primjerima operator & je korišten za kreiranje reference, ali on s
 
 Kad se varijabla napravi u C++ dodijeli joj se memorijska adresa. Kad se doda vrijednost varijabli tada se ta vrijednost spremi na ovoj memorijskoj adresi. 
 
-Da bi pristupili toj memorijskoj adresi koristimo operator $&$.
+Da bi pristupili toj memorijskoj adresi koristimo operator &.
 
 ```c++
 string hrana = "Burek";
