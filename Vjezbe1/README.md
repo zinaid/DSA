@@ -534,11 +534,15 @@ Postoje 3 slučaja:
 
 Primjer:
 
-$T(n)=4T(n/2)+O(n)$
+$
+T(n)=4T(n/2)+O(n)
+$
 
 $a=4, b=2, d=1$
 
-$log_24=2>1$ => $T(n)=O(n^{lob_ba})=O(n^2)$.
+$
+log_24=2>1$ => $T(n)=O(n^{lob_ba})=O(n^2)
+$.
 
 ### PODIJELI PA VLADAJ
 
