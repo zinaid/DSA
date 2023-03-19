@@ -17,14 +17,14 @@ int main()
     for (i = 0; i < n; i++)
 
     {
-
-        scanf("%d", &array[i]);
+        cin >> array[i];
     }
 
-    printf("Unesite element koji želite dodati na kraj: ");
+    printf("Unesite element koji zelite dodati na kraj: ");
 
-    scanf("%d", &item);
+    cin >> item;
 
+    // Doda se element na kraj niza
     array[n] = item;
 
     printf("Novi niz: \n");
