@@ -60,7 +60,7 @@ struct Student{
 ```
 # REFERENCE
 
-Referenca (varijabla) je "referenca" na postojeću varijablu i kreira se sa $&$ operatorom.
+Referenca (varijabla) je "referenca" na postojeću varijablu i kreira se sa & operatorom.
 
 ```c++
 string hrana = "Burek"; // varijabla hrana
@@ -73,7 +73,7 @@ cout<<hrana<<endl; // daje Burek
 cout<<obrok<<endl; // daje Burek
 ```
 
-U prethodnim primjerima operator $&$ je korišten za kreiranje reference, ali on se isto tako može koristiti za dobijanje memorijske adrese varijable (lokacije u memoriji kompjutera gdje je varijabla spremljena).
+U prethodnim primjerima operator & je korišten za kreiranje reference, ali on se isto tako može koristiti za dobijanje memorijske adrese varijable (lokacije u memoriji kompjutera gdje je varijabla spremljena).
 
 Kad se varijabla napravi u C++ dodijeli joj se memorijska adresa. Kad se doda vrijednost varijabli tada se ta vrijednost spremi na ovoj memorijskoj adresi. 
 
