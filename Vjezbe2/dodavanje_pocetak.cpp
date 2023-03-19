@@ -7,6 +7,7 @@ int main()
 
     int array[10], n, i, item;
 
+    // Unos niza
     printf("Unesite velicinu niza: ");
 
     cin >> n;
@@ -17,19 +18,19 @@ int main()
 
     {
 
-        scanf("%d", &array[i]);
+        cin >> array[i];
     }
 
-    printf("Unesite element koji želite dodati na početak: ");
+    printf("Unesite element koji zelite dodati na pocetak: ");
 
-    scanf("%d", &item);
+    cin >> item;
 
+    // Poveca se n za 1
     n++;
 
     for (i = n; i > 1; i--)
 
     {
-
         array[i - 1] = array[i - 2];
     }
 
