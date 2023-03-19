@@ -11,10 +11,10 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
 
     int max = findMaxPointers(arr, size);
-    cout << "The largest element with pointers is: " << max << endl;
+    cout << "Najveci element koristeci pokazivace: " << max << endl;
 
     int max2 = findMaxWithoutPointers(arr, size);
-    cout << "The largest element is: " << max << endl;
+    cout << "Najveci element: " << max << endl;
 
     return 0;
 }

@@ -13,18 +13,18 @@ int main()
     return 0;
 }
 
-void ispisPokazivac(int *niz)
-{
-    for (int i = 0; i < 5; i++)
-    {
-        cout << *niz + i;
-    }
-}
-
 void ispis(int niz[])
 {
     for (int i = 0; i < 5; i++)
     {
         cout << niz[i];
+    }
+}
+
+void ispisPokazivac(int *niz)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        cout << *niz + i;
     }
 }
