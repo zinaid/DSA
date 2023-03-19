@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 int main()
 
@@ -8,25 +9,27 @@ int main()
 
     printf("Unesite velicinu niza:");
 
-    scanf("%d", &size);
+    cin >> size;
 
     printf("Unesite %d elemente\n", size);
 
     for (int i = 0; i < size; i++)
-
-        scanf("%d", &array[i]);
+    {
+        cin >> array[i];
+    }
 
     printf("Unesite lokaciju \n");
 
-    scanf("%d", &pos);
+    cin >> pos;
 
     printf("Unesite vrijednost \n");
 
-    scanf("%d", &val);
+    cin >> val;
 
     for (int i = size - 1; i >= pos - 1; i--)
-
+    {
         array[i + 1] = array[i];
+    }
 
     array[pos - 1] = val;
 
