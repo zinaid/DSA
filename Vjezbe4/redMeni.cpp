@@ -40,11 +40,12 @@ bool isEmpty(Red *red)
     }
 };
 
-void enQueueu(Red *red, int element)
+void enQueue(Red *red, int element)
 {
     if (isFull(red))
     {
         cout << "Red je već pun" << endl;
+        return;
     }
 
     if (isEmpty(red))
@@ -125,7 +126,7 @@ void ispisiRed(Red *red)
     cout << endl;
 }
 
-main()
+int main()
 {
     int opcija = 0;
     int element;
@@ -154,7 +155,7 @@ main()
             cout << "\nOdabrali ste dodavanje elementa u red. \n";
             cout << "Unesite element: ";
             cin >> element;
-            enQueueu(red, element);
+            enQueue(red, element);
             break;
 
         case 2:
