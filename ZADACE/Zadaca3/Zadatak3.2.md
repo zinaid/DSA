@@ -1,0 +1,1 @@
+Implementirati sve naučene operacije sa jednostrukom povezanom listom, ali proslijeđivati glavu liste kao parametar funkcije (Vidi primjer: Vjezbe 5>listExample3.cpp). 
