@@ -4,6 +4,8 @@ Povezana lista je linearna struktura podataka koja sadrži seriju povezanih čvo
 
 Adresa prvog čvora nosi specijalno ime HEAD. Zadnji čvor u listi pokazuje na NULL.
 
+<img src="images/linkedlist.png">
+
 Povezane liste mogu biti: jednostruke, dvostruke i kružne povezane liste.
 
 ## REPREZENTACIJA POVEZANIH LISTI
