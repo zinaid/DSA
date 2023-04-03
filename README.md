@@ -4,43 +4,43 @@
 ## Kurs: Algoritmi i strukture podataka - II/4 - 45h
 
 # SADRŽAJ
-* UVOD
+* UVOD*
   * Uvod u algoritme
-  * Strukture podataka i tipovi
-  * Zašto učiti algoritme
-  * Asimptotska notacija (Big O)
+  * Strukture podataka i podjela struktura podataka
+  * Važnost učenja algoritama i struktura podataka
+  * Analiza vremenske i prostorne složenosti (Asimptotska notacija)
   * Master teorem
   * Podijeli i vladaj algoritam
 * STRUKTURE PODATAKA
-  * Niz
-  * Stek
-  * Red
-  * Tipovi redova (Obični red, Kružni red, Prioritetni red, Dequeu)
-  * Liste
-  * Operacije sa listama
-  * Tipovi listi (Jednostruke povezane liste, Dvostruke povezane liste, Kružne liste)
-  * Hash tabele
-  * Heap 
-  * Stabla
-  * Birnarno stablo
-  * Stablo za traženje
-  * Uravnotežena stabla
-  * Grafovi
-  * Algoritmi sortiranja
-    * Bubble Sort
-    * Selection Sort
-    * Insertion Sort
-    * Merge Sort
-    * Quick Sort
-    * Counting Sort
-    * Radix Sort
-    * Bucket Sort
-    * Heap Sort
-    * Shell Sort
-  * Algoritmi pretraživanja
-    * Sekvencijalno pretraživanje
-    * Binarno pretraživanje
-  * Pohlepni algoritmi
+  * Nizovi* - jednodimenzionalni i višedimenzionalni nizove i primjena
+  * Stek* - implementacija steka koristeći nizove i primjena steka
+  * Red* - implementacija reda koristeći nizove i primjena reda
+  * Tipovi reda (Obični red, Kružni red, Prioritetni red, Dequeu)
+  * Implementacija reda i queue koristeći STL C++ library
+  * Liste* - implementacija jednostruko povezane liste i operacije sa jednostruko povezanom listom
+  * Dvostruko povezana lista i operacije sa dvostruko povezanom listom
+  * Kružna lista i operacije sa kružnom listom
+  * Stek i red* - Implementacija steka i reda koristeći liste
+  * Implementacija liste koristeći C++ STL library
+  * Stabla* - definicija, terminologija, tipovi stabla i primjena
+  * Binarno stablo* - tipovi i implementacija
+  * Prolazak kroz stablo* - Inorder, Preorder i Postorder
+  * Balansirano stablo, AVL stablo, B stablo, Red-Black stablo
+  * Hash tabele* - uvod, hash funkcije, kolizija i aplikacija
+  * Grafovi* - terminologija, reprezentacija
+  * DFS i BFS grafovi
+  * Heap
+  * Vektori*
+  * Mape
+* Algoritmi sortiranja i pretrage *
+  * Bubble Sort
+  * Selection Sort
+  * Insertion Sort
+  * Merge Sort
+  * Quick Sort 
+  * Sekvencijalna pretraga
+  * Binarna pretraga
+* Pohlepni algoritmi
     * Ford-Fulkerson algoritam
     * Dijkstra algoritam
     * Kruskal algoritam
@@ -49,6 +49,8 @@
   * Dinamičko programiranje
     * Floyd Warshal algoritam
   * Algoritmi sa vraćanjem unazad 
+
+```*-obavezno```
 
 ## Način ocjenjivanja:
 
