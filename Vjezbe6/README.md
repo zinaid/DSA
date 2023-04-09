@@ -55,4 +55,105 @@ Najpopularnije baze podataka koriste B i T stabla za spremanje podataka.
 
 Kompajleri koriste sintaksu stabla za validiranje sintakse svakog programa koji pišemo.
 
+## Prolazak kroz stablo
 
+Prolazak kroz stablo (Traversing) znači posjetiti svaki čvor u stablu. Možemo npr. dodati sve vrijednosti u stablo ili pronaći najveći čvor. Za sve ove operacije, potrebno je posjetiti svaki čvor stabla.
+
+<img src="images/traversal.png">
+
+Na osnovu prethodne slike, moguće je pročitati elementa stabla na sljedeće načine:
+
+```1->12->5->6->9``` ili npr. ```5->6->12->9->1```.
+
+Međutim prilikom prolaska kroz stablo potrebno je koristiti metode koje uzimaju u obzir osnovnu strukturu stabla.
+
+```c++
+struct node {
+    int data;
+    struct node* left;
+    struct node* right;
+}
+```
+
+Struktura čvor koja pokazuje na left i right može imati i svoju djecu tako da na njih posmatramo kao podstabla, a ne kao podčvorove.
+
+Na osnovu ove strukture svako stablo je kombinacija:
+
+* čvora koji nosi podatak
+* dva podstabla
+
+Naš cilj je posjetiti svaki čvor, tako da trebamo proći kod sve čvorove i u podstablu.
+
+Zavisno od reda kojim to radimo razlikujemo tri tipa prolaska kroz stabla.
+
+### Inorder traversal
+
+Prvo posjetimo sve čvorove u lijevom podstablu, zatim korijen i onda sve čvorove u desnom podstablu.
+
+```
+inorder(root->left)
+display(root->data)
+inorder(root->right)
+```
+
+### Preorder traversal
+
+Prvo posjetimo korijen, zatim lijevo, a onda desno podstablo.
+
+```
+display(root->data)
+preorder(root->left)
+preorder(root->right)
+```
+
+### Postorder traversal
+
+Posjetimo sve čvorove u lijevom podstablu, zatim u desnom podstablu i onda korijen.
+
+```
+postorder(root->left)
+postorder(root->right)
+display(root->data)
+```
+
+# BINARNO STABLO
+
+Binarno stablo je stablo struktura podataka kod koje svaki roditeljski čvor ima najviše dvoje djece. Svaki čvor binarnog stabla se sastoji od tri stvari:
+
+* podatka koji nosi
+* adrese lijevog djeteta
+* adrese desnog djeteta
+
+<img src="images/binarno.png">
+
+## Tipovi binarnog stabla
+
+Razlikujemo sljedeće tipove binarnog stabla:
+
+Puno binarno stablo - specijalna kategorija binarnog stabla kod kojeg svaki roditeljski čvor ima ili dvoje ili nijedno dijete.
+
+<img src="images/punobinarno.png">
+
+
+Savršeno binarno stablo - je kategorija binarnog stabla u kojoj svaki interni čvor ima tačno dvoje djece i svaki list čvor je na istom nivou.
+
+<img src="images/savrseno.png">
+
+Kompletno binarno stablo je kao puno binarno stablo, ali sa dvije razlike:
+
+svi listovi moraju naginjati prema lijevo
+zadnji list element ne smije imati desnog brata
+
+<img src="images/kompletno.png">
+
+Degenerativno stablo - je stablo koje ima samo jedno dijete, lijevo ili desno.
+
+<img src="images/degenerativno.png">
+
+Iskrivljeno binarno stablo - je degenerativno stablo kod kojeg dominira ili lijevi listovi ili desni. Tako da postoje lijevo iskrivljeno stablo i desno iskrivljeno stablo.
+
+<img src="images/pomjereno.png">
+
+Balansirano binarno stablo je tip binarnog stabla u kojeg je razlika između visine lijevog i desnog podstabla za svaki čvor je ili 0 ili 1.
+
+<img src="images/balansirano.png">
