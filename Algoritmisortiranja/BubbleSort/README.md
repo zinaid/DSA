@@ -4,6 +4,8 @@ Buuble sort je sortirajući algoritam koji komparira dva susjedna elementa i mij
 
 Dobio je ime po kretanju mjehurića zraka u vodi koji se podižu do površine, svaki element u nizu se pomjera do kraja u svakoj iteraciji.
 
+<img src="images/bubblegif.gif">
+
 Primjer 1.
 
 Sortiramo elemente u rastućem redu (Ascending-ASC).
