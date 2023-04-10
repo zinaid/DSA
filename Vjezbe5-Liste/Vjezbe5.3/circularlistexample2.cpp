@@ -8,193 +8,176 @@ struct Cvor
     struct Cvor *sljedeci;
 };
 
-struct Cvor *addToEmpty(struct Cvor *zadnji, int vrijednost)
+Cvor *dodajNaPraznuListu(Cvor *zadnji, int vrijednost)
 {
-    if (zadnji != NULL)
+    if (zadnji != nullptr)
         return zadnji;
 
-    // allocate memory to the new node
-    struct Cvor *noviCvor = new Cvor;
-
-    // assign data to the new node
+    Cvor *noviCvor = new Cvor;
     noviCvor->vrijednost = vrijednost;
-
-    // assign last to newNode
     zadnji = noviCvor;
-
-    // create link to iteself
+    // sam na sebe pokazuje
     zadnji->sljedeci = zadnji;
-
     return zadnji;
 }
 
-// add node to the end
-struct Cvor *addEnd(struct Cvor *zadnji, int vrijednost)
+Cvor *dodajNaKraj(Cvor *zadnji, int vrijednost)
 {
-    // check if the node is empty
-    if (zadnji == NULL)
-        return addToEmpty(zadnji, vrijednost);
+    if (zadnji == nullptr)
+        return dodajNaPraznuListu(zadnji, vrijednost);
 
-    // allocate memory to the new node
     struct Cvor *noviCvor = new Cvor;
-
-    // add data to the node
     noviCvor->vrijednost = vrijednost;
-
-    // store the address of the head node to next of newNode
+    // novi cvor pokazuje na zadnji, a zadnji pokazuje na novi cvor
     noviCvor->sljedeci = zadnji->sljedeci;
-
-    // point the current last node to the newNode
     zadnji->sljedeci = noviCvor;
-
-    // make newNode as the last node
+    // novi cvor postaje zadnji
     zadnji = noviCvor;
 
     return zadnji;
 }
 
-// add node to the front
-struct Cvor *addFront(struct Cvor *zadnji, int vrijednost)
+struct Cvor *dodajNaPocetak(Cvor *zadnji, int vrijednost)
 {
-    // check if the list is empty
-    if (zadnji == NULL)
-        return addToEmpty(zadnji, vrijednost);
+    if (zadnji == nullptr)
+        return dodajNaPraznuListu(zadnji, vrijednost);
 
-    // allocate memory to the new node
-    struct Cvor *noviCvor = new Cvor;
-
-    // add data to the node
+    Cvor *noviCvor = new Cvor;
     noviCvor->vrijednost = vrijednost;
-
-    // store the address of the current first node in the newNode
+    // novi cvor pokazuje na prvi (jer zadnji pokazuje na prvi)
     noviCvor->sljedeci = zadnji->sljedeci;
-
-    // make newNode as head
+    // novi cvor postaje prvi
     zadnji->sljedeci = noviCvor;
 
     return zadnji;
 }
 
-// insert node after a specific node
-struct Cvor *addAfter(struct Cvor *zadnji, int vrijednost, int pozicija)
+Cvor *dodajNaPoziciju(Cvor *zadnji, int vrijednost, int pozicija)
 {
-    // check if the list is empty
-    if (zadnji == NULL)
-        return NULL;
+    Cvor *noviCvor = new Cvor;
+    noviCvor->vrijednost = vrijednost;
 
-    struct Cvor *noviCvor, *p;
-
-    p = zadnji->sljedeci;
-    do
+    if (pozicija == 1)
     {
-        // if the item is found, place newNode after it
-        if (p->vrijednost == pozicija)
-        {
-            // allocate memory to the new node
-            noviCvor = new Cvor;
-            // add data to the node
-            noviCvor->vrijednost = vrijednost;
-
-            // make the next of the current node as the next of newNode
-            noviCvor->sljedeci = p->sljedeci;
-
-            // put newNode to the next of p
-            p->sljedeci = noviCvor;
-
-            // if p is the last node, make newNode as the last node
-            if (p == zadnji)
-                zadnji = noviCvor;
-            return zadnji;
-        }
-
-        p = p->sljedeci;
-    } while (p != zadnji->sljedeci);
-
-    cout << "\nThe given node is not present in the list" << endl;
-    return zadnji;
-}
-
-// delete a node
-void deleteNode(Cvor **zadnji, int kljuc)
-{
-    // if linked list is empty
-    if (*zadnji == NULL)
-        return;
-
-    // if the list contains only a single node
-    if ((*zadnji)->vrijednost == kljuc && (*zadnji)->sljedeci == *zadnji)
-    {
-        free(*zadnji);
-        *zadnji = NULL;
-        return;
+        noviCvor->sljedeci = zadnji;
+        return noviCvor;
     }
 
-    Cvor *temp = *zadnji, *d;
-
-    // if last is to be deleted
-    if ((*zadnji)->vrijednost == kljuc)
-    {
-        // find the node before the last node
-        while (temp->sljedeci != *zadnji)
-            temp = temp->sljedeci;
-
-        // point temp node to the next of last i.e. first node
-        temp->sljedeci = (*zadnji)->sljedeci;
-        free(*zadnji);
-        *zadnji = temp->sljedeci;
-    }
-
-    // travel to the node to be deleted
-    while (temp->sljedeci != *zadnji && temp->sljedeci->vrijednost != kljuc)
+    Cvor *temp = zadnji;
+    for (int i = 1; i < pozicija && temp != nullptr; i++)
     {
         temp = temp->sljedeci;
     }
 
-    // if node to be deleted was found
-    if (temp->sljedeci->vrijednost == kljuc)
+    if (temp == nullptr)
     {
-        d = temp->sljedeci;
-        temp->sljedeci = d->sljedeci;
-        free(d);
+        cout << "\n Cvor nije u listi. " << endl;
+        return zadnji;
     }
+
+    noviCvor->sljedeci = temp->sljedeci;
+    temp->sljedeci = noviCvor;
+
+    return zadnji;
+}
+
+Cvor *obrisiPoVrijednosti(Cvor *zadnji, int vrijednost)
+{
+    // da li je prazna lista
+    if (zadnji == NULL)
+        return nullptr;
+
+    // Ako lista ima samo jedan element i taj element ima vrijednost
+    if (zadnji->vrijednost == vrijednost && zadnji->sljedeci == zadnji)
+    {
+        delete zadnji;
+        zadnji = nullptr;
+        return nullptr;
+    }
+
+    Cvor *temp = zadnji;
+
+    // Ako se brise zadnji
+    if (zadnji->vrijednost == vrijednost)
+    {
+        // naci cvor prije zadnjeg
+        while (temp->sljedeci != zadnji)
+            temp = temp->sljedeci;
+
+        // temp sljedeci pokazuje na zadnji sljedeci tj prvi
+        temp->sljedeci = zadnji->sljedeci;
+        zadnji = temp->sljedeci;
+        return zadnji;
+    }
+
+    // nadji cvor za brisanje
+    while (temp->sljedeci != zadnji && temp->sljedeci->vrijednost != vrijednost)
+    {
+        temp = temp->sljedeci;
+    }
+
+    // ako nadje tu vrijednost
+    if (temp->sljedeci->vrijednost == vrijednost)
+    {
+        // privremena vrijednost u koju spremamo temp->sljedeci
+        Cvor *d = temp->sljedeci;
+        temp->sljedeci = d->sljedeci;
+        delete d;
+    }
+
+    return zadnji;
 }
 
 void traverse(struct Cvor *zadnji)
 {
-    struct Cvor *p;
 
-    if (zadnji == NULL)
+    if (zadnji == nullptr)
     {
-        cout << "The list is empty" << endl;
+        cout << "Lista je prazna." << endl;
         return;
     }
 
-    p = zadnji->sljedeci;
+    Cvor *temp = zadnji->sljedeci;
 
     do
     {
-        cout << p->vrijednost << " ";
-        p = p->sljedeci;
+        cout << temp->vrijednost << " ";
+        temp = temp->sljedeci;
 
-    } while (p != zadnji->sljedeci);
+    } while (temp != zadnji->sljedeci);
 }
 
 int main()
 {
-    struct Cvor *last = NULL;
+    struct Cvor *zadnji = NULL;
 
-    last = addToEmpty(last, 6);
-    last = addEnd(last, 8);
-    last = addFront(last, 2);
+    zadnji = dodajNaPraznuListu(zadnji, 6);
+    zadnji = dodajNaKraj(zadnji, 8);
+    zadnji = dodajNaPocetak(zadnji, 2);
 
-    last = addAfter(last, 10, 2);
+    zadnji = dodajNaPoziciju(zadnji, 10, 2);
 
-    traverse(last);
+    traverse(zadnji);
 
-    deleteNode(&last, 8);
+    zadnji = obrisiPoVrijednosti(zadnji, 8);
+
     cout << endl;
+    traverse(zadnji);
 
-    traverse(last);
+    zadnji = obrisiPoVrijednosti(zadnji, 2);
+
+    cout << endl;
+    traverse(zadnji);
+
+    zadnji = obrisiPoVrijednosti(zadnji, 6);
+
+    cout << endl;
+    traverse(zadnji);
+
+    zadnji = obrisiPoVrijednosti(zadnji, 10);
+
+    cout << endl;
+    traverse(zadnji);
 
     return 0;
 }
