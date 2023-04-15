@@ -1,0 +1,1 @@
+Implementirati funkcije za dodavanje cvorova u BST i napraviti funkciju koja provjerava da li se cvor nalazi u BST.
