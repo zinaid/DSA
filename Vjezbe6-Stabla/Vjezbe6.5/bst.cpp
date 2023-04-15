@@ -36,11 +36,11 @@ void inorder(Cvor *root)
 // Dodavanje cvora
 Cvor *insert(Cvor *cvor, int vrijednost)
 {
-    // Return a new node if the tree is empty
+    // Prazno stablo
     if (cvor == NULL)
         return noviCvor(vrijednost);
 
-    // Traverse to the right place and insert the node
+    // Ako je vrijednost manja od cvora dodaj u lijevo podstablo, suprotno u desno
     if (vrijednost < cvor->vrijednost)
         cvor->lijevo = insert(cvor->lijevo, vrijednost);
     else
@@ -49,33 +49,33 @@ Cvor *insert(Cvor *cvor, int vrijednost)
     return cvor;
 }
 
-// Find the inorder successor
+// Pronadji inorder nasljednika
 Cvor *minValueNode(Cvor *node)
 {
     Cvor *temp = node;
 
-    // Find the leftmost leaf
+    // Nadji zadnji lijevi cvor
     while (temp && temp->lijevo != NULL)
         temp = temp->lijevo;
 
     return temp;
 }
 
-// Deleting a node
+// Brisanje cvora
 Cvor *deleteNode(Cvor *root, int vrijednost)
 {
-    // Return if the tree is empty
+    // Prazno stablo
     if (root == NULL)
         return root;
 
-    // Find the node to be deleted
+    // Pronadji cvor za brisati
     if (vrijednost < root->vrijednost)
         root->lijevo = deleteNode(root->lijevo, vrijednost);
     else if (vrijednost > root->vrijednost)
         root->desno = deleteNode(root->desno, vrijednost);
     else
     {
-        // If the node is with only one child or no child
+        // Ako ima jedno ili nijedno dijete
         if (root->lijevo == NULL)
         {
             Cvor *temp = root->desno;
@@ -89,7 +89,7 @@ Cvor *deleteNode(Cvor *root, int vrijednost)
             return temp;
         }
 
-        // If the node has two children
+        // Ako cvor ima dvoje djece
         Cvor *temp = minValueNode(root->desno);
 
         // Place the inorder successor in position of the node to be deleted
@@ -101,7 +101,6 @@ Cvor *deleteNode(Cvor *root, int vrijednost)
     return root;
 }
 
-// Driver code
 int main()
 {
     Cvor *root = NULL;
