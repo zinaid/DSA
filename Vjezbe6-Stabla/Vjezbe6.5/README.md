@@ -10,26 +10,43 @@ Svi čvorovi lijevog podstabla su manji od korijenskog čvora
 
 Svi čvorovi desnog podstabla su veći od korijenskog čvora
 
-Oba podstabla svakog čvora su isto BST
+Oba podstabla svakog čvora su isto BST.
 
-Dvije osnovne operacije nad BST su:
-Pretraga i Insert.
+Primjer operacija kreiranja, dodavanja, brisanja i pretrage je dat sa primjerom bst.cpp.
 
-## Pretraga
+Vremenska kompleksnost:
 
-Algoritam ovisi o osobinama BST-a tj da svako lijevo podstablo ima manje vrijednosti i svako desno podstablo ima veće vrijednosti od korijena.
+<table>
+    <th>Operacija</th>
+    <th>Najbolji slucaj</th>
+    <th>Prosjecni slucaj</th>
+    <th>Najgori slucaj</th>
+    <tr>
+    <td>Pretraga</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+    <tr>
+    <td>Dodavanje</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+    <tr>
+    <td>Brisanje</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+</table>
 
-Ako je vrijednost ispod čvora, sa sigurnošću znamo da se ne nalazi u desnom podstablu i gledamo samo lijevo. 
+Vremenska kompleksnost svih operacija je O(n).
 
-### Algoritam
+Binarno stablo pretrage se koristi u:
 
-```
-If root == NULL
-    return NULL;
-If number == root->data
-    return root->data
-If number < root->data
-    return search(root->left)
-If number > root->data
-    return search(root->right)
-```
+* indeksiranju baza
+
+* dinamičkog sortiranja
+
+* upravljanje sa virtualnom memorijom

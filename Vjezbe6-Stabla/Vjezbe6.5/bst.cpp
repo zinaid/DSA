@@ -1,100 +1,102 @@
 #include <iostream>
 using namespace std;
 
-struct node
+struct Cvor
 {
-    int key;
-    struct node *left, *right;
+    int vrijednost;
+    Cvor *lijevo;
+    Cvor *desno;
 };
 
-struct node *newNode(int item)
+// Kreiranje cvora
+Cvor *noviCvor(int item)
 {
-    struct node *temp = new node;
-    temp->key = item;
-    temp->left = temp->right = NULL;
-    return temp;
+    Cvor *noviCvor = new Cvor;
+    noviCvor->vrijednost = item;
+    noviCvor->lijevo = noviCvor->desno = NULL;
+    return noviCvor;
 }
 
 // Inorder Traversal
-void inorder(struct node *root)
+void inorder(Cvor *root)
 {
     if (root != NULL)
     {
         // Traverse left
-        inorder(root->left);
+        inorder(root->lijevo);
 
         // Traverse root
-        cout << root->key << " -> ";
+        cout << root->vrijednost << " -> ";
 
         // Traverse right
-        inorder(root->right);
+        inorder(root->desno);
     }
 }
 
-// Insert a node
-struct node *insert(struct node *node, int key)
+// Dodavanje cvora
+Cvor *insert(Cvor *cvor, int vrijednost)
 {
     // Return a new node if the tree is empty
-    if (node == NULL)
-        return newNode(key);
+    if (cvor == NULL)
+        return noviCvor(vrijednost);
 
     // Traverse to the right place and insert the node
-    if (key < node->key)
-        node->left = insert(node->left, key);
+    if (vrijednost < cvor->vrijednost)
+        cvor->lijevo = insert(cvor->lijevo, vrijednost);
     else
-        node->right = insert(node->right, key);
+        cvor->desno = insert(cvor->desno, vrijednost);
 
-    return node;
+    return cvor;
 }
 
 // Find the inorder successor
-struct node *minValueNode(struct node *node)
+Cvor *minValueNode(Cvor *node)
 {
-    struct node *current = node;
+    Cvor *temp = node;
 
     // Find the leftmost leaf
-    while (current && current->left != NULL)
-        current = current->left;
+    while (temp && temp->lijevo != NULL)
+        temp = temp->lijevo;
 
-    return current;
+    return temp;
 }
 
 // Deleting a node
-struct node *deleteNode(struct node *root, int key)
+Cvor *deleteNode(Cvor *root, int vrijednost)
 {
     // Return if the tree is empty
     if (root == NULL)
         return root;
 
     // Find the node to be deleted
-    if (key < root->key)
-        root->left = deleteNode(root->left, key);
-    else if (key > root->key)
-        root->right = deleteNode(root->right, key);
+    if (vrijednost < root->vrijednost)
+        root->lijevo = deleteNode(root->lijevo, vrijednost);
+    else if (vrijednost > root->vrijednost)
+        root->desno = deleteNode(root->desno, vrijednost);
     else
     {
         // If the node is with only one child or no child
-        if (root->left == NULL)
+        if (root->lijevo == NULL)
         {
-            struct node *temp = root->right;
+            Cvor *temp = root->desno;
             free(root);
             return temp;
         }
-        else if (root->right == NULL)
+        else if (root->desno == NULL)
         {
-            struct node *temp = root->left;
+            Cvor *temp = root->lijevo;
             free(root);
             return temp;
         }
 
         // If the node has two children
-        struct node *temp = minValueNode(root->right);
+        Cvor *temp = minValueNode(root->desno);
 
         // Place the inorder successor in position of the node to be deleted
-        root->key = temp->key;
+        root->vrijednost = temp->vrijednost;
 
         // Delete the inorder successor
-        root->right = deleteNode(root->right, temp->key);
+        root->desno = deleteNode(root->desno, temp->vrijednost);
     }
     return root;
 }
@@ -102,7 +104,7 @@ struct node *deleteNode(struct node *root, int key)
 // Driver code
 int main()
 {
-    struct node *root = NULL;
+    Cvor *root = NULL;
     root = insert(root, 8);
     root = insert(root, 3);
     root = insert(root, 1);
