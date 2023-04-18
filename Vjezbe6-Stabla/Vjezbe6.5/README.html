@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BINARNO STABLO PRETRAGE BST</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="binarno-stablo-pretrage-bst">BINARNO STABLO PRETRAGE BST</h1>
+<p>Binarno stablo pretrage je struktura podataka koja omogućuje brzo pretraživanje sortirane liste brojeva.</p>
+<p>Zove se binarno jer svaki čvor ima maksimum dvoje djece. Naziva se drvo za pretragu jer se koristi za pretragu brojeva u O(log(n)) vremenu.</p>
+<p>Osobine koje odvajaju binarno stablo pretrage od regularnog binarnog stabla su:</p>
+<p>Svi čvorovi lijevog podstabla su manji od korijenskog čvora</p>
+<p>Svi čvorovi desnog podstabla su veći od korijenskog čvora</p>
+<p>Oba podstabla svakog čvora su isto BST.</p>
+<p>Primjer operacija kreiranja, dodavanja, brisanja i pretrage je dat sa primjerom bst.cpp.</p>
+<p>Vremenska kompleksnost:</p>
+<table>
+    <th>Operacija</th>
+    <th>Najbolji slucaj</th>
+    <th>Prosjecni slucaj</th>
+    <th>Najgori slucaj</th>
+    <tr>
+    <td>Pretraga</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+    <tr>
+    <td>Dodavanje</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+    <tr>
+    <td>Brisanje</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    </tr>
+</table>
+<p>Vremenska kompleksnost svih operacija je O(n).</p>
+<p>Binarno stablo pretrage se koristi u:</p>
+<ul>
+<li>
+<p>indeksiranju baza</p>
+</li>
+<li>
+<p>dinamičkog sortiranja</p>
+</li>
+<li>
+<p>upravljanje sa virtualnom memorijom</p>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>

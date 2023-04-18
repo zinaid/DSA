@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <p>U C++ mapa je kontejner koji sprema podatke u ključ-vrijednost parove. Implementirana je kao balansirano binarno stablo za pretragu, što čini pretragu, insert i brisanje elemenata jako efikasnim.</p>
+<p>Ključevi u mapi su uvijek unikatni i spremaju se u uređenom redoslijedu. To omogućuje pretragu elemenata po ključu lakšom (logaritamska kompleksnost). Vrijednosti mogu biti bilo kojeg tipa, uključujući i korisnički definirane klase.</p>
+<p>Da bi u C++ koristili mape uključimo <map> header fajl.</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    map&lt;kljuc, vrijednost&gt; nazivMape;
+}
+</code></pre>
+<p>Ovdje, kljuc je tip podataka za kljuceve, a vrijednost je tip podatka za vrijednosti. Naprimjer ako želimo mapu gdje će ključevi biti stringovi, a vrijednosti integeri koristimo sljedeću sintaksu:</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    map&lt;string, <span class="hljs-type">int</span>&gt; mojaMapa;
+}
+</code></pre>
+<p>Da bi dodali element u mapu, koristimo insert() funkciju:</p>
+<pre><code class="language-c++">mojaMapa.<span class="hljs-built_in">insert</span>(<span class="hljs-built_in">make_pair</span>(<span class="hljs-string">&quot;key1&quot;</span>, <span class="hljs-number">10</span>));
+</code></pre>
+<p>key1 je ključ, a vrijednost je 10. Moguće je dodati element ili modificirati koristeći []:</p>
+<pre><code class="language-c++">mojaMapa[<span class="hljs-string">&quot;key2&quot;</span>]=<span class="hljs-number">20</span>;
+</code></pre>
+<p>Elementu možemo pristupi na osnovu njegovog ključa sa:</p>
+<pre><code class="language-c++"><span class="hljs-type">int</span> vrijednost = mojaMapa[<span class="hljs-string">&quot;kljuc2&quot;</span>];
+</code></pre>
+
+        
+        
+    </body>
+    </html>

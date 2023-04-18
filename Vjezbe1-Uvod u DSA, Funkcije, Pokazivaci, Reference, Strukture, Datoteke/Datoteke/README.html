@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DATOTEKE U C&plus;&plus;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="datoteke-u-c">DATOTEKE U C++</h1>
+<p>Biblioteka fstream omogućava nam rad sa fajlovima.</p>
+<p>Da bi koristili fstream biblioteku, uključimo i iostream i fstream header fajlove.</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span>
+</code></pre>
+<p>U ovoj biblioteci imaju tri klase koje se koriste za kreiranje, čitanje ili pisanje fajlova.</p>
+<p>ofstream - kreiranje i pisanje u fajlove
+ifstream - čitanje iz fajlova
+fstream - kombinacija kreiranja, čitanja i pisanja u fajlove</p>
+<h3 id="kreiranje-i-pisanje-u-fajl">KREIRANJE I PISANJE U FAJL</h3>
+<p>Nakon uključivanja fstream biblioteke, koristimo nekoliko njenih funkcionalnosti i tipova.</p>
+<p>Prije svega potrebno je deklarirati fstream tip.</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    fstream myFile;
+    <span class="hljs-comment">// ako ne postoji kreirat ce ga</span>
+    myFile.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fajl.txt&quot;</span>, ios::out); <span class="hljs-comment">// write</span>
+
+    <span class="hljs-comment">// provjera da li je fajl uspjesno ostvoren</span>
+    <span class="hljs-keyword">if</span>(myFile.<span class="hljs-built_in">is_open</span>()){
+        myFile&lt;&lt;<span class="hljs-string">&quot;Hello \n&quot;</span>;
+        myFile&lt;&lt;<span class="hljs-string">&quot;Hello 2 \n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// obavezno zatvarati fajl</span>
+    myFile.<span class="hljs-built_in">close</span>();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>Zamislimo situaciju da sad želimo uraditi append na trenutni postojeći fajl.</p>
+<p>Zamislimo sljedeću situaciju:</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    fstream fajl;
+    fajl.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fajl.txt&quot;</span>, ios::out);
+
+    <span class="hljs-keyword">if</span>(fajl.<span class="hljs-built_in">is_open</span>()){
+        fajl&lt;&lt;<span class="hljs-string">&quot;Hello 3\n&quot;</span>;
+    }
+
+    fajl.<span class="hljs-built_in">close</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+</code></pre>
+<p>Ovaj kod će nam prekucati postojeće stanje u txt fajlu. Ako želimo uraditi append moramo koristiti mode append.</p>
+<pre><code class="language-c++">fajl.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fajl.txt&quot;</span>, ios::app);
+</code></pre>
+<h3 id="čitanje-iz-fajla">ČITANJE IZ FAJLA</h3>
+<p>Prvi korak je otvaranje fajla u read modu. Zatim sa while petljom prolazimo kroz cijeli sadrzaj fajla.</p>
+<pre><code class="language-c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;fstream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    fstream fajl;
+    fajl.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fajl.txt&quot;</span>, ios::in);
+
+    <span class="hljs-keyword">if</span> (fajl.<span class="hljs-built_in">is_open</span>())
+    {
+        string line;
+        <span class="hljs-keyword">while</span> (<span class="hljs-built_in">getline</span>(fajl, line))
+        {
+            cout &lt;&lt; line &lt;&lt; endl;
+        }
+    }
+
+    fajl.<span class="hljs-built_in">close</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>Koristimo i string biblioteku da možemo koristiti getline funkciju.</p>
+
+        
+        
+    </body>
+    </html>
