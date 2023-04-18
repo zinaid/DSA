@@ -1,1 +1,0 @@
-velicina_rezultata
