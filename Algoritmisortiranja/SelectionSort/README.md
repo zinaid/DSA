@@ -2,6 +2,8 @@
 
 Selection sort je algoritam sortiranja koji uzima najmanji element iz nesortirane liste u svakoj iteraciji i smješta taj element na početak nesortirane liste.
 
+<img src="images/selectiongif.gif">
+
 Princip rada selection sort algoritma:
 
 <img src="images/sel1.png">
