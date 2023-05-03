@@ -16,12 +16,12 @@
   * Stek* - implementacija steka koristeći nizove i primjena steka
   * Red* - implementacija reda koristeći nizove i primjena reda
   * Tipovi reda (Obični red, Kružni red, Prioritetni red, Dequeu)
-  * Implementacija reda i queue koristeći STL C++ library
+  * Implementacija reda i queue koristeći STL C++ library *
   * Liste* - implementacija jednostruko povezane liste i operacije sa jednostruko povezanom listom
-  * Dvostruko povezana lista i operacije sa dvostruko povezanom listom
-  * Kružna lista i operacije sa kružnom listom
+  * Dvostruko povezana lista i operacije sa dvostruko povezanom listom *
+  * Kružna lista i operacije sa kružnom listom *
   * Stek i red* - Implementacija steka i reda koristeći liste
-  * Implementacija liste koristeći C++ STL library
+  * Implementacija liste koristeći C++ STL library *
   * Stabla* - definicija, terminologija, tipovi stabla i primjena
   * Binarno stablo* - tipovi i implementacija
   * Prolazak kroz stablo* - Inorder, Preorder i Postorder
@@ -29,17 +29,17 @@
   * Hash tabele* - uvod, hash funkcije, kolizija i aplikacija
   * Grafovi* - terminologija, reprezentacija
   * DFS i BFS grafovi
-  * Heap
+  * Heap *
   * Vektori*
-  * Mape
+  * Mape *
 * Algoritmi sortiranja i pretrage *
-  * Bubble Sort
-  * Selection Sort
-  * Insertion Sort
-  * Merge Sort
-  * Quick Sort 
-  * Sekvencijalna pretraga
-  * Binarna pretraga
+  * Bubble Sort *
+  * Selection Sort *
+  * Insertion Sort *
+  * Merge Sort *
+  * Quick Sort  *
+  * Sekvencijalna pretraga *
+  * Binarna pretraga *
 * Pohlepni algoritmi
     * Ford-Fulkerson algoritam
     * Dijkstra algoritam
@@ -63,3 +63,5 @@
 ## Literatura:
 * MIT Electrical Engineering and Computer Science, Introduction to Algorithms By Thomas H. Cormen, Charles E. Leiserson and Ronald L. Rivest
 * S Sahni: Data Structures, Algorithms, and Applications in C++, WCB/McGraw-Hill, 1999.
+
+Drugi kolokvij starta od Hash tabela i uključuje: Hash tabele, Heap, Grafove i Vektore. Algoritmi sortiranja i algoritmi pretrage.
