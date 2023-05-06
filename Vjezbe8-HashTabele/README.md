@@ -50,9 +50,21 @@ Tehnike u otvorenom adresiranju su:
 
 * Linearno sondiranje - u linarnom sondiranju, kolizija se riješava sa provjerom narednog slota. Npr. ako se kolizija desi na poziciji h(k, 0), onda se provjerava h(k, 1). Linearno povećava pozicije od i dok se ne nađe prazan slot. Problem sa linearnim sondiranjem je da moramo prolaziti kroz cijeli cluster.
 
+```
+h(k, i) = (h′(k) + i) mod m
+```
+
 * Kvadratno sondiranje - radi slično linearnom sondiranju, ali se razmak između slotova povećava.
+
+```
+h(k, i) = (h′(k) + c1 *i + c2 *i2) mod m
+```
   
 * Duplo heširanje - ako se desi kolizija nakon primjene heš funkcije, onda se računa nova heš funkcija za pronalazk sljedećeg slota.
+
+```
+h(k, i) = (h1(k) + i*h2(k)) mod m
+```
 
 ## PRIMJENA HEŠ TABELA
 
