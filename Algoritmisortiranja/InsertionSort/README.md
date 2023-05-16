@@ -45,6 +45,9 @@ end insertionSort
 
 <table>
 <th>
+Kompleksnost
+</th>
+<th>
 Best
 </th>
 <th>
@@ -54,6 +57,7 @@ Worst
 Average
 </th>
 <tbody>
+<tr>
 <td>
 Vremenska kompleksnost
 </td>
@@ -67,6 +71,9 @@ O(n2)
 O(n2)
 </td>
 <td>
+</tr>
+<tr>
+<td>
 Prostorna kompleksnost
 </td>
 <td>
@@ -78,6 +85,7 @@ O(1)
 <td>
 O(1)
 </td>
+</tr>
 </tbody>
 </table>
 
