@@ -40,6 +40,9 @@ end selectionSort
 
 <table>
 <th>
+Kompleksnost
+</th>
+<th>
 Best
 </th>
 <th>
@@ -49,6 +52,7 @@ Worst
 Average
 </th>
 <tbody>
+<tr>
 <td>
 Vremenska kompleksnost
 </td>
@@ -61,6 +65,8 @@ O(n2)
 <td>
 O(n2)
 </td>
+</tr>
+<tr>
 <td>
 Prostorna kompleksnost
 </td>
@@ -73,6 +79,7 @@ O(1)
 <td>
 O(1)
 </td>
+</tr>
 </tbody>
 </table>
 
