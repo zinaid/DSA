@@ -97,7 +97,7 @@ Odnosno ukupni broj komparacija je n*(n-1) što je približno n2.
 
 Najbolji slučaj je O(n) - ako je niz već sortiran, vanjska petlja se pokreće samo za n broj puta, dok se unutarnja petlja ne pokreće nikako. Kompleksnost je dakle linearna.
 
-Prosječni slučaj je O(n) - javlja se kad su elementi random poredani, niti DESC niti ASC.
+Prosječni slučaj je O(n2) - javlja se kad su elementi random poredani, niti DESC niti ASC.
 
 Prostorna kompleksnost je O(1) jer se koristi dodatna varijabla "ključ".
 
