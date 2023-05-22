@@ -74,7 +74,7 @@ binarySearch(arr, x, low, high)
             return binarySearch(arr, x, low, mid - 1)
 ```
 
-## Kompleksnost Selection sorta
+## Kompleksnost binarne pretrage
 
 <table>
 <th>
