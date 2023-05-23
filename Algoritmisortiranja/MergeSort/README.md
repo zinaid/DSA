@@ -112,7 +112,7 @@ O(n)
 
 ## Primjena
 
-Insertion sort se koristi kada:
+Merge sort se koristi kada:
 
 * Inverzijski count
 
