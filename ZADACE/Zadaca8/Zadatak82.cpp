@@ -58,6 +58,7 @@ int main()
         cin >> arr[i];
     }
 
+    cout << "\nSortiranje niza...\n";
     bubbleSort(arr, size);
 
     int cilj;
@@ -68,12 +69,10 @@ int main()
 
     if (pozicija != -1)
     {
-        cout << "\nSortiranje niza...\n";
         cout << "\nBroj " << cilj << " je pronadjen na poziciji " << pozicija << ".\n";
     }
     else
     {
-        cout << "\nSortiranje niza...\n";
         cout << "\nBroj " << cilj << " nije prisutan u nizu.\n";
     }
 
