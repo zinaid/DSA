@@ -138,7 +138,7 @@ cout<<hrana<<endl; // Sirnica
 
 Pokazivač je varijabla koja pokazuje na memorijsku adresu druge varijable. Referenca je alias za već postojeću varijablu. Kad se referenca veže za jednu varijablu, ne može se promjeniti da referira na drugu varijablu.
 
-<div style="text-align:center"><img src="../images/refvspoint.png" /></div>
+<div style="text-align:center"><img src="images/refvspoint.png" /></div>
 
 <table>
 <tr>
