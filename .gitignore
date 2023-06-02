@@ -2,3 +2,5 @@
 *.out
 *.vscodegit
 *.html
+*.vscode
+*tempCodeRunnerFile.cpp
