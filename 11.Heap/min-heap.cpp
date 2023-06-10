@@ -37,18 +37,22 @@ void heapify(vector<int> &hT, int i)
 
 void insert(vector<int> &hT, int newNum)
 {
-    int size = hT.size();
-    if (size == 0)
+    hT.push_back(newNum);
+
+    int index = hT.size() - 1;
+    int parentIndex = (index - 1) / 2;
+
+    while (index > 0 && hT[index] < hT[parentIndex])
     {
-        hT.push_back(newNum);
+        swap(hT[index], hT[parentIndex]);
+
+        index = parentIndex;
+        parentIndex = (index - 1) / 2;
     }
-    else
+
+    for (int i = hT.size() / 2 - 1; i >= 0; i--)
     {
-        hT.push_back(newNum);
-        for (int i = size / 2 - 1; i >= 0; i--)
-        {
-            heapify(hT, i);
-        }
+        heapify(hT, i);
     }
 }
 
