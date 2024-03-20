@@ -13,7 +13,6 @@ void napravi_treci_niz(int niz1[], int velicina1, int niz2[], int velicina2, int
     for (int i = 0; i < velicina2; i++)
     {
         rezultat[velicina1 + i] = niz2[i];
-        velicina_rezultata++;
     }
 }
 
