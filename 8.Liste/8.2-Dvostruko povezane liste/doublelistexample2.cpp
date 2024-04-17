@@ -65,7 +65,7 @@ void dodajCvorNaPoziciju(int element, int pozicija)
 
     for (int i = 2; i < pozicija; i++)
     {
-        while (temp->sljedeci != nullptr)
+        if (temp->sljedeci != nullptr)
         {
             temp = temp->sljedeci;
         }
