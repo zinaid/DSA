@@ -71,6 +71,7 @@ void dodajCvorNaPoziciju(int element, int pozicija)
         }
     }
     noviCvor->sljedeci = temp->sljedeci;
+    temp->sljedeci->prethodni = noviCvor;
     temp->sljedeci = noviCvor;
     noviCvor->prethodni = temp;
 }
