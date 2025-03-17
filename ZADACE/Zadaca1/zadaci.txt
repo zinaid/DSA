@@ -1,0 +1,54 @@
+1. Objasniti šta radi sljedeći pseudokôd:
+
+Korak 1: Start  
+Korak 2: Deklariraj varijable pacijenti, i i pronadjen  
+Korak 3: Inicijaliziraj varijable, pronadjen <- 0, i <- 0  
+Korak 4: Unesi broj pacijenata  
+Korak 5: Ponavljaj korake dok i < pacijenti  
+    Korak 5.1: Unesi tjelesnu temperaturu pacijenta  
+    Korak 5.2: If (temperatura > 37.5)  
+                  pronadjen <- 1  
+                  Idi na korak 6  
+    Korak 5.3: i <- i + 1  
+Korak 6: If pronadjen = 1  
+            Prikaži: "Postoji pacijent sa povišenom temperaturom"  
+         Else  
+            Prikaži: "Nema pacijenata sa povišenom temperaturom"  
+Korak 7: Stop  
+
+Implementirati prikazani pseudokôd koristeći C++. Analizirati vremensku i prostornu složenost algoritma (napisati koja je, zašto je takva  i objasniti šta nam to znači).
+
+
+2. Objasniti šta radi sljedeći pseudokôd:
+
+Korak 1: Start  
+Korak 2: Deklariraj varijable n, i, flag  
+Korak 3: Inicijaliziraj flag <- 1, i <- 2  
+Korak 4: Unesi broj n  
+Korak 5: Ponavljaj dok i ≤ sqrt(n)  
+    Korak 5.1: If (n mod i) = 0  
+                  flag <- 0  
+                  Idi na korak 6  
+    Korak 5.2: i <- i + 1  
+Korak 6: If flag = 0  
+            Prikaži: "Broj nije prost"  
+         Else  
+            Prikaži: "Broj je prost"  
+Korak 7: Stop 
+
+Implementirati prikazani pseudokôd koristeći C++. Analizirati vremensku i prostornu složenost algoritma (napisati koja je, zašto je takva  i objasniti šta nam to znači).
+
+2. Implementirati program koji provjerava iz datoteke doktori.txt sve doktore u bolnici. Za svakog doktora koji ima više od 10 godina iskustva, kreirati novi fajl s njegovim imenom.
+
+struct Doktor {
+    string ime;
+    string prezime;
+    string specijalizacija;
+    int godine_iskustva;
+};
+
+John Doe Kardilogija 12
+Pero Peric Neurologija 8
+Meho Mehic Ortopedija 15
+
+3. 
