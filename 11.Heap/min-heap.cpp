@@ -49,11 +49,6 @@ void insert(vector<int> &hT, int newNum)
         index = parentIndex;
         parentIndex = (index - 1) / 2;
     }
-
-    for (int i = hT.size() / 2 - 1; i >= 0; i--)
-    {
-        heapify(hT, i);
-    }
 }
 
 void deleteNode(vector<int> &hT, int num)
