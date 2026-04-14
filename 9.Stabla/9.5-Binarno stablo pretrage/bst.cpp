@@ -79,13 +79,13 @@ Cvor *deleteNode(Cvor *root, int vrijednost)
         if (root->lijevo == NULL)
         {
             Cvor *temp = root->desno;
-            free(root);
+            delete root;
             return temp;
         }
         else if (root->desno == NULL)
         {
             Cvor *temp = root->lijevo;
-            free(root);
+            delete root;
             return temp;
         }
 
